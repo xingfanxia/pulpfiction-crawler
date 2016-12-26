@@ -29,9 +29,9 @@ def bookLookup(key):
 	return None
 	
 if __name__ == '__main__':
-	get_ls = []
-	book_NO = bookLookup("site:bxwx8.org 绝世唐门全文完整版txt")
-	download_url = "http://txt.bxwxtxt.com/packdown/fulltxt/{cat}/{no}.txt".format(cat = book_NO[:-3], no = book_NO)
+	# get_ls = []
+	# book_NO = bookLookup("site:bxwx8.org 绝世唐门全文完整版txt")
+	# download_url = "http://txt.bxwxtxt.com/packdown/fulltxt/{cat}/{no}.txt".format(cat = book_NO[:-3], no = book_NO)
 
 	book_ls = ["绝世唐门", "庆余年", "英雄志", "完美世界", "极品公子", "诛仙", "亵渎", "紫川", "佣兵天下", "新宋", "流氓高手", "流氓仙厨"]
 
@@ -42,7 +42,7 @@ if __name__ == '__main__':
 			if not os.path.exists("downloads"):
 				os.makedirs("downloads") 
 			urllib.urlretrieve(download_url, u"downloads/{name}.txt".format(name=book))
-			get_ls.append(download_url)
+			# get_ls.append(download_url)
 
 			print (get_ls)
 		else:
