@@ -22,19 +22,12 @@ def bookLookup(key):
 	source = opener.open(url).read()
 	doc = html.fromstring(source)
 	book_url = doc.cssselect(".r>a")[0].attrib['href']
-	re1='.*?'	# Non-greedy match on filler
-	re2='\\d+'	# Uninteresting: int
-	re3='.*?'	# Non-greedy match on filler
-	re4='\\d+'	# Uninteresting: int
-	re5='.*?'	# Non-greedy match on filler
-	re6='(\\d+)'	# Integer Number 1
-	# rg = re.compile("\d*\b\.htm\b",re.IGNORECASE|re.DOTALL)
-	# match = r.search(book_url)
 	match = re.findall(r'\d*\b\.htm\b', book_url)
 	if match:
 		bookNumber = match[0][:-4]
 		return bookNumber
 	return None
+	
 if __name__ == '__main__':
 	get_ls = []
 	book_NO = bookLookup("site:bxwx8.org 绝世唐门全文完整版txt")
