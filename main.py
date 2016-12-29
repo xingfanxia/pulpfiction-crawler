@@ -30,8 +30,8 @@ def bookLookup(key):
 
 if __name__ == '__main__':
 
-	book_ls = ["绝世唐门", "庆余年", "英雄志", "完美世界", "极品公子", "诛仙", "亵渎", "紫川", "佣兵天下", "新宋", "流氓高手", "流氓仙厨"]
-
+	# book_ls = ["绝世唐门", "庆余年", "英雄志", "完美世界", "极品公子", "诛仙", "亵渎", "紫川", "佣兵天下", "新宋", "流氓高手", "流氓仙厨"]
+	book_ls = ["我吃西红柿"]
 	for book in book_ls:
 		book_NO = bookLookup("site:bxwx8.org {name}全文完整版txt".format(name=book))
 		if book_NO:
