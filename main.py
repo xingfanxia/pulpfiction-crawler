@@ -29,9 +29,13 @@ def bookLookup(key):
 	return None
 
 if __name__ == '__main__':
-
+	book_ls = []
 	# book_ls = ["绝世唐门", "庆余年", "英雄志", "完美世界", "极品公子", "诛仙", "亵渎", "紫川", "佣兵天下", "新宋", "流氓高手", "流氓仙厨"]
-	book_ls = ["我吃西红柿"]
+	while True:
+		bookname = raw_input("Please enter a bookname to add it to download list, enter a q to finish adding: \n")
+		if bookname == 'q':
+			break		
+		book_ls.append(unicode(bookname, "utf-8"))
 	for book in book_ls:
 		book_NO = bookLookup("site:bxwx8.org {name}全文完整版txt".format(name=book))
 		if book_NO:
@@ -39,5 +43,8 @@ if __name__ == '__main__':
 			if not os.path.exists("downloads"):
 				os.makedirs("downloads") 
 			urllib.urlretrieve(download_url, u"downloads/{name}.txt".format(name=book))
+			print u"{name} downloaded!".format(name="book")
 		else:
 			print "book not found"
+
+	print "Download finished!"
