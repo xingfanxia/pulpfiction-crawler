@@ -6,6 +6,7 @@
 # @Version : $Id$
 
 import os, re, time, urllib2, urllib, sys, requests
+from easygui import *
 from cookielib import CookieJar
 from lxml import html, etree
 reload(sys) 
@@ -33,6 +34,7 @@ if __name__ == '__main__':
 	# book_ls = ["绝世唐门", "庆余年", "英雄志", "完美世界", "极品公子", "诛仙", "亵渎", "紫川", "佣兵天下", "新宋", "流氓高手", "流氓仙厨"]
 	while True:
 		bookname = raw_input("Please enter a bookname to add it to download list, enter a q to finish adding: \n")
+		# bookname = enterbox(u"输入书名加入下载列表，输入q停止输入开始下载")
 		if bookname == 'q':
 			break		
 		book_ls.append(unicode(bookname, "utf-8"))
